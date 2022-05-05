@@ -1,0 +1,133 @@
+body {
+  padding: 0 1rem;
+}
+
+.table-container {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+table {
+  border-collapse: collapse;
+  max-width: 1280px;
+  margin: auto;
+  padding: 0;
+  width: 100%;
+}
+
+table thead,
+table tbody,
+table tr { width: 100%; }
+
+table td {
+  background: #f6f6f6;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  text-align: center;
+  letter-spacing: 0.03rem;
+  
+  text-transform: capitalize;
+  padding: .5rem 1rem;
+}
+
+@media screen and (min-width: 901px) {
+
+  table tr { 
+    border-right: 0;
+  }
+  table td {
+    border: 2px solid #fff;
+    transition: .4s background ease-in-out, .4s color ease-in-out
+  }
+  table td:first-of-type {
+    width: 100px;
+  }
+  table td:nth-of-type(n+3) {
+    width: 60px;
+  }
+  
+  table tbody tr:hover td {
+    color: #fff;
+    background-color: #b1abab;
+  }
+  table tbody tr td svg {
+    transition: .4s fill ease-in-out;
+  }
+  table tbody tr:hover td svg {
+    fill: #fff;
+  }
+  
+  table th {
+    padding: .5rem 0;
+  }
+
+  table td:nth-of-type(2) {
+    text-align: left;
+  }
+  
+  table th:nth-last-of-type(-n+2),
+  table td:nth-last-of-type(-n+2) { 
+    width: 30px;
+  }
+  
+  table td.drag { 
+    cursor: grab;
+  }
+}
+
+@media screen and (min-width: 1080px) {
+  table td {
+    transition: .4s all ease-in-out;
+  }
+  table td:first-of-type {
+    width: 130px;
+  }
+  table td:not(:nth-last-of-type(-n+2)):nth-of-type(n+3) {
+    width: 90px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  table thead {
+    display: none;
+  }
+  
+  table tr {
+    border: 1px solid #ccc;
+    display: block;
+    margin-bottom: 1.5rem;
+  } 
+  
+  table td {
+    border-bottom: 2px solid #fff;
+    padding: .5rem 1rem;
+    display: block;
+    text-align: right;
+  }
+  
+  table td::before {
+    content: attr(data-label);
+    float: left;
+    font-weight: bold;
+  }
+  
+  table td:nth-last-of-type(-n+2) {
+    border-bottom: 0;
+  }
+
+  table th:nth-last-of-type(-n+2),
+  table td:nth-last-of-type(-n+2) { 
+    text-align: right;
+  }
+
+  table td.drag { display: none; }
+}
+
+
+iframe {
+  display: none;
+}
